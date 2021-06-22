@@ -41,4 +41,28 @@ app.eureka-server: ServiceDiscovery
 app.auth-server:  AuthorizationServer
 app.config-server : ConfigServer
 spring.cloud.stream.kafka.binder.brokers: kafka	  
-spring.rabbitmq.host: rabbitmq    
+spring.rabbitmq.host: rabbitmq
+
+---
+spring:
+  profiles: streaming_partitioned
+
+---
+
+spring:
+  profiles: streaming_instance_0
+
+---
+
+spring:
+  profiles: streaming_instance_1
+  
+---
+
+spring:
+  profiles: kafka
+  
+management.health.rabbit.enabled: false
+spring.cloud.stream.defaultBinder: kafka  
+
+  
