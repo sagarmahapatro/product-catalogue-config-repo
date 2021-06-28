@@ -80,6 +80,8 @@ spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.auth-server}
 
 app.product-service.timeoutSec: 2
 
+management.health.circuitbreakers.enabled: true
+
 resilience4j.circuitbreaker:
   backends:
     product:
