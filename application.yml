@@ -70,7 +70,7 @@ spring:
 management.health.rabbit.enabled: false
 spring.cloud.stream.defaultBinder: kafka
 spring.zipkin.sender.type: kafka
-spring.kafka.bootstrap-servers: kafka:9092
+#  spring.kafka.bootstrap-servers: kafka:9092
 
 ---
 spring.profiles: streaming_partitioned_producer
