@@ -75,6 +75,10 @@ spring.zipkin.sender.type: kafka
 ---
 spring.profiles: streaming_partitioned_producer
 
+spring.cloud.stream.kafka.binder:
+            minPartitionCount: 2
+            autoCreateTopics: true
+
 spring.cloud.stream.bindings.output-products.producer:
   partition-key-expression: payload.header
   partition-count: 2
