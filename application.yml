@@ -78,6 +78,7 @@ spring.profiles: streaming_partitioned_producer
 spring.cloud.stream.kafka.binder:
             minPartitionCount: 2
             autoCreateTopics: true
+            autoAddPartitions: true
 
 spring.cloud.stream.bindings.output-products.producer:
   partition-key-expression: payload.header
