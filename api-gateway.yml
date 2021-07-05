@@ -18,19 +18,11 @@ logging:
 spring.cloud.gateway.routes:
 
   - id: product-composite
-    uri:  http://product-composite
+    uri:  http://${app.product-composite}
     predicates:
-        - Path=/product-composite/**
-         
-  - id: eureka-api
-    uri: http://${app.eureka-server}:8761
-    predicates:
-        - Path=/eureka/api/{segment}
-    filters:
-        - SetPath=/eureka/{segment}
-        
+        - Path=/product-composite/**      
   - id: auth-api
-    uri:  http://authorization-server
+    uri:  http://${app.authorization-server}
     predicates:
         - Path=/oauth/**  
  

@@ -2,6 +2,8 @@ app:
   eureka-server: localhost
   auth-server: localhost
   config-server : localhost
+  product-composite: 'localhost:7002'
+  authorization-server: 'localhost:9999'
       
     
 management.endpoint.health.show-details: "ALWAYS"
@@ -28,9 +30,10 @@ spring.sleuth.sampler.probability: 1.0
 spring:
   profiles: docker
 
-app.eureka-server: ServiceDiscovery 
+app.product-composite: ProductCompositeService
 app.auth-server:  AuthorizationServer
 app.config-server : ConfigServer
+app.authorization-server: AuthorizationServer
 spring.cloud.stream.kafka.binder.brokers: kafka
 spring.rabbitmq.host: rabbitmq
 
