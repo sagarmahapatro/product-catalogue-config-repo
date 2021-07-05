@@ -12,15 +12,13 @@ logging:
     org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
     org.springframework.cloud.gateway: TRACE
 
-    
-ribbon.ServerListRefreshInterval: 5000
-ribbon.NFLoadBalancerPingInterval: 5        
+   
     
 
 spring.cloud.gateway.routes:
 
   - id: product-composite
-    uri: lb://product-composite
+    uri:  http://product-composite
     predicates:
         - Path=/product-composite/**
          
@@ -32,23 +30,11 @@ spring.cloud.gateway.routes:
         - SetPath=/eureka/{segment}
         
   - id: auth-api
-    uri: lb://authorization-server
+    uri:  http://authorization-server
     predicates:
         - Path=/oauth/**  
-        
-  - id: eureka-web-start
-    uri: http://${app.eureka-server}:8761
-    predicates:
-       - Path=/eureka/web
-    filters:
-       - SetPath=/
-
-  - id: eureka-web-other
-    uri: http://${app.eureka-server}:8761
-    predicates:
-       - Path=/eureka/**
-       
-  - id: host_route_200
+ 
+ - id: host_route_200
     uri: http://httpstat.us
     predicates:
       - Host=i.feel.lucky:8080
@@ -78,7 +64,7 @@ spring.cloud.gateway.routes:
     filters:
       - RewritePath=/config/(?<segment>.*), /$\{segment}              
 
-spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.auth-server}:9999/.well-known/jwks.json
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.auth-server}/.well-known/jwks.json
        
 
 ---

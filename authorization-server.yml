@@ -2,3 +2,4 @@ server:
   port: 9999    
 ---
 spring.profiles: docker
+port: 80
