@@ -1,8 +1,6 @@
 app:
-  eureka-server: localhost
-  auth-server: localhost
   config-server : localhost
-  product-composite: 'localhost:7002'
+  product-composite-service: 'localhost:7002'
   authorization-server: 'localhost:9999'
       
     
@@ -30,10 +28,9 @@ spring.sleuth.sampler.probability: 1.0
 spring:
   profiles: docker
 
-app.product-composite: ProductCompositeService
-app.auth-server:  AuthorizationServer
-app.config-server : ConfigServer
-app.authorization-server: AuthorizationServer
+app.product-composite-service: product-composite-service
+app.config-server : config-server
+app.authorization-server: authorization-server
 spring.cloud.stream.kafka.binder.brokers: kafka
 spring.rabbitmq.host: rabbitmq
 

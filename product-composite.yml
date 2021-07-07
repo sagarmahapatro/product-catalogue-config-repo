@@ -72,7 +72,7 @@ spring.cloud.stream:
         required-groups: auditGroup
 
    
-spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.auth-server}/.well-known/jwks.json
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.authorization-server}/.well-known/jwks.json
 
 
 app.product-service.timeoutSec: 2
