@@ -62,4 +62,14 @@ spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.authorizatio
 ---
 spring.profiles: docker
 
+---
+spring.profiles: prod
+
+logging:
+  level:
+    root: WARN
+    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: WARN
+    org.springframework.cloud.gateway: WARN
+    org.springframework.web.server.adapter.HttpWebHandlerAdapter: WARN
+
                 
